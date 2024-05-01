@@ -1,0 +1,161 @@
+/* Estilos generales para la barra de navegación */
+.home_header {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px 20px; /* Espaciado interno superior e inferior */
+    background-color: #040c1c; /* Color de fondo (ajústalo según tus preferencias) */
+}
+
+/* Estilos para el logotipo */
+.logo_header img {
+    max-width: 30px; /* Ajusta el tamaño del logotipo según tus necesidades */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav_header ul {
+    list-style-type: none; /* Elimina los marcadores de viñetas */
+    margin-left: 20px;
+    padding: 0;
+    display: flex; /* Muestra los elementos en línea */
+    gap: 20px; /* Espaciado entre los elementos */
+}
+
+.nav_header a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #efe9e9; /* Color del texto de los enlaces */
+    font-weight: bold; /* Peso de la fuente (ajústalo según tus preferencias) */
+}
+
+.text_banner {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-family: 'Arial', sans-serif; /* Aplica un tipo de letra minimalista */
+}
+
+.text_banner h1 {
+    font-size: 24px; /* Tamaño del título */
+    font-weight: bold; /* Peso de la fuente */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.text_banner h4 {
+    font-size: 16px; /* Tamaño del subtítulo */
+    font-weight: normal; /* Peso normal de la fuente */
+}
+
+.banner_home_instalaciones {
+    display: flex; /* Utiliza flexbox para alinear las imágenes */
+}
+
+.banner_home_instalaciones img {
+    width: 50%; /* Cada imagen ocupa el 50% del contenedor para estar una al lado de la otra */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+}
+
+.cards_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+}
+
+.card_container1,
+.card_container2 {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card_container1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.card_container2 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.registro_equipamiento_home,
+.buscador_equipamiento_home {
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.btn_registro_home,
+.btn_buscador_home {
+    background-color: #221974; /* Color de fondo estético */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambio de cursor al pasar el ratón */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.btn_registro_home:hover,
+.btn_buscador_home:hover {
+    background-color: #0e0f46; /* Cambio de color al pasar el ratón */
+}
+
+footer {
+    background-color: #d5d5d5; /* Color de fondo */
+    padding: 50px 0; /* Espaciado interno */
+    margin-top: 30px;
+}
+
+.footer_container {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Distribuye los elementos */
+}
+
+.logo_footer img {
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Altura automática */
+}
+
+.info_footer {
+    text-align: center; /* Alineación del texto */
+}
+
+.info_footer p {
+    margin: 10px 20px; /* Espaciado entre párrafos */
+    color: #666; /* Color del texto */
+}
+
+.info_footer a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.info_footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
