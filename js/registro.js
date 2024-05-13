@@ -1,56 +1,43 @@
-const addForm = document.getElementById("form-validation");
-
-addForm.addEventListener("submit", (e)=> {
-    if (addForm.checkValidity() === false){
-        e.preventDefault();
-        e.stopPropagation();
-        // addForm.classList.add('was-validate');
-        const messageDiv = document.createElement('div');
-        messageDiv.textContent = "Ups, parece que no digitaste correctamente los datos para hacer un registro exitoso. Te vamos a redirigir a una página de indicaciones para aclararte el paso a paso de cómo hacer el registro correctamente.";
-        messageDiv.classList.add('error-message');
-        document.body.appendChild(messageDiv);
-        // Redirigir a la página de indicaciones.html después de unos segundos
-        setTimeout(() => {
-            window.location.href = 'indicaciones.html';
-        }, 5000);
-    }
-})
-
 document.addEventListener('DOMContentLoaded', function () {
-    const addForm = document.getElementById('form-validation');
+    const exerciseForm = document.getElementById('exercise-form');
+    
+    exerciseForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    addForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Evitar que el formulario se envíe automáticamente
+        // Obtener los valores de los campos del formulario
+        const name = document.getElementById('exercise-name').value.trim();
+        const category = document.getElementById('exercise-category').value;
+        const image = document.getElementById('exercise-image').value;
+        const code = document.getElementById('exercise-code').value.trim();
+        const price = document.getElementById('exercise-price').value.trim();
+        const description = document.getElementById('exercise-description').value.trim();
+        const trainer = document.getElementById('exercise-trainer').value.trim();
+        const availability = document.querySelector('input[name="availability"]:checked');
 
-        // Obtener los valores del formulario
-        const nombreEjercicio = addForm.querySelector('input[name="nombre-ejercicio"]').value;
-        const categoria = addForm.querySelector('input[name="categoria"]').value;
-        const img = addForm.querySelector('input[name="imagen"]').value;
-        const codigo = addForm.querySelector('input[name="codigo"]').value;
-        const precio = addForm.querySelector('input[name="precio"]').value;
-        const descripcion = addForm.querySelector('input[name="descripcion"]').value;
-        const entrenador = addForm.querySelector('input[name="entrenador"]').value;
-        const disponibilidad = addForm.querySelector('input[name="disponibilidad"]').value === "Verdadero" ? true : false;
+        // Validar los campos del formulario
+        if (!name || !category || !image || !code || !price || !description || !trainer || !availability) {
+            alert('Por favor complete todos los campos.');
+            // Redirigir al usuario a la página de indicaciones.html
+            window.location.href = 'indicaciones.html';
+            return;
+        }
 
-        // Crear un nuevo objeto con los valores del formulario
-        const nuevoEntrenamiento = {
-            "nombre_ejercicio": nombreEjercicio,
-            "categoria": categoria,
-            "img": img,
-            "codigo": codigo,
-            "precio": parseFloat(precio), // Convertir a número
-            "descripcion": descripcion,
-            "entrenador": entrenador,
-            "disponibilidad": disponibilidad
+        // Crear el nuevo objeto de ejercicio
+        const newExercise = {
+            nombre_ejercicio: name,
+            categoria: category,
+            img: `../img/${image}.jpg`, // Asumiendo que las imágenes tienen extensión .jpg
+            codigo: code,
+            precio: parseInt(price), // Convertir el precio a un número entero
+            descripcion: description,
+            entrenador: trainer,
+            disponibilidad: availability.value === 'true' ? true : false // Convertir la disponibilidad a booleano
         };
 
-        // Agregar el nuevo objeto al array de entrenamientos
-        entrenamientos.push(nuevoEntrenamiento);
+        // Agregar el nuevo ejercicio al array de ejercicios en la base de datos
+        entrenamientos.push(newExercise);
 
-        // Mostrar un mensaje de éxito o redirigir a otra página
-        alert("¡El ejercicio ha sido registrado exitosamente!");
-
-        // Limpiar el formulario después de agregar el nuevo entrenamiento
-        addForm.reset();
+        // Redireccionar a la página de ejercicios
+        window.location.href = 'ejercicios.html';
     });
 });

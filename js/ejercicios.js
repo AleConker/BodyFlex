@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <p><strong>Categoría:</strong> ${product.categoria}</p>
             <img src="${product.img}" alt="${product.nombre_ejercicio}">
             <p><strong>Código:</strong> ${product.codigo}</p>
-            <p><strong>Precio:</strong> ${product.precio}</p>
+            <p><strong>Precio:</strong> $ ${product.precio} COP</p>
             <p><strong>Descripción:</strong> ${product.descripcion}</p>
             <p><strong>Entrenador:</strong> ${product.entrenador}</p>
             <p><strong>Disponibilidad:</strong> ${product.disponibilidad ? 'Disponible' : 'No Disponible'}</p>

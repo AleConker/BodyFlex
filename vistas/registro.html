@@ -23,52 +23,75 @@
     <article class="cuerpo">
         <section class="container">
             <div class="title_registro">Registro de Productos</div>
-            <form id="form-validation" novalidate>
+            <form id="exercise-form" novalidate>
                 <div class="form-group">
-                    <span>Nombre Ejercicio</span>
-                    <input type="text" placeholder="Ingrese el nombre del ejercicio" required>
-                    <small>El Nombre del ejercicio es obligatorio</small>
-                </div>
-                <div class="form-group">
-                    <span>Categoria</span>
-                    <input type="text" placeholder="A que grupo muscular" required>
-                    <small>La categoria es necesaria</small>
+                    <label for="exercise-name">Nombre del Ejercicio:</label>
+                    <input type="text" id="exercise-name" placeholder="Ingrese el nombre del ejercicio" maxlength="20" required>
                 </div>
                 <div class="form-group">
-                    <span>Imagen</span>
-                    <input type="text" placeholder="Seleccione una Imagen" required>
-                    <small>Es necesario una imagen</small>
+                    <label for="exercise-category">Categoría:</label>
+                    <select id="exercise-category" required>
+                        <option value="">Seleccionar Categoría</option>
+                        <option value="Bíceps">Bíceps</option>
+                        <option value="Abdomen">Abdomen</option>
+                        <option value="Lumbar">Lumbar</option>
+                        <option value="Espalda">Espalda</option>
+                        <option value="Hombro">Hombro</option>
+                        <option value="Pectoral">Pectoral</option>
+                        <option value="Soleo">Soleo</option>
+                        <option value="Femoral">Femoral</option>
+                        <option value="Cuadriceps">Cuadriceps</option>
+                        <option value="Antebrazo">Antebrazo</option>
+                        <option value="Tríceps">Tríceps</option>
+                        <option value="Abductores">Abductores</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <span>Código</span>
-                    <input type="text" placeholder="Ingrese el código" required>
-                    <small>Se requiere un codigo</small>
+                    <label for="exercise-image">Imagen:</label>
+                    <select id="exercise-image" required>
+                        <option value="">Seleccionar Imagen</option>
+                        <option value="workout_1">workout_1</option>
+                        <option value="workout_2">workout_2</option>
+                        <option value="workout_3">workout_3</option>
+                        <option value="workout_4">workout_4</option>
+                        <option value="workout_5">workout_5</option>
+                        <option value="workout_6">workout_6</option>
+                        <option value="workout_7">workout_7</option>
+                        <option value="workout_8">workout_8</option>
+                        <option value="workout_9">workout_9</option>
+                        <option value="workout_10">workout_10</option>
+                        <option value="workout_11">workout_11</option>
+                        <option value="workout_12">workout_12</option>
+                        <option value="workout_13">workout_13</option>
+                        <option value="workout_14">workout_14</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <span>Precio</span>
-                    <input type="text" placeholder="Ingrese el costo del entrenamiento" required>
-                    <small>Un valor monetario es necesario</small>
+                    <label for="exercise-code">Código del Ejercicio:</label>
+                    <input type="text" id="exercise-code" placeholder="Ingrese el código del ejercicio" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d{2}).{8,}" required>
                 </div>
                 <div class="form-group">
-                    <span>Descripción<nav></nav></span>
-                    <input type="text" placeholder="Escriba una descripción sobre la ejecucion del ejercicio" required>
-                    <small>La descripcion es importante</small>
+                    <label for="exercise-price">Precio:</label>
+                    <input type="number" id="exercise-price" placeholder="Ingrese el precio" min="0" required>
                 </div>
                 <div class="form-group">
-                    <span>Entrenador</span>
-                    <input type="text" placeholder="Ingrese nombre del entrenador" required>
-                    <small>El nombre del entrenador encargado es necesario</small>
+                    <label for="exercise-description">Descripción:</label>
+                    <textarea id="exercise-description" placeholder="Escriba una descripción del ejercicio" maxlength="160" required></textarea>
                 </div>
                 <div class="form-group">
-                    <span>Disponibilidad</span>
-                    <input type="text" placeholder="Verdadero o Falso" required>
-                    <small>Por favor seleccione si esta disponible</small>
+                    <label for="exercise-trainer">Entrenador:</label>
+                    <input type="text" id="exercise-trainer" placeholder="Ingrese el nombre del entrenador" required>
                 </div>
-                <div class="button-registrar">
-                    <input type="submit" value="Registrar">
+                <div class="form-group">
+                    <label>Disponibilidad:</label>
+                    <div>
+                        <label><input type="radio" name="availability" value="true" required> Disponible</label>
+                        <label><input type="radio" name="availability" value="false"> No Disponible</label>
+                    </div>
                 </div>
-                <div class="button-limpiar">
-                    <input type="button" value="Limpiar">
+                <div class="button-group">
+                    <button type="submit">Registrar</button>
+                    <button type="button" id="clear-btn">Limpiar Campos</button>
                 </div>
             </form>
         </section>
@@ -89,6 +112,7 @@
     </footer>
 
     <!--JavaScript-->
+    <script src="../js/database.js"></script>
     <script type="text/javascript" src="../js/registro.js"></script>
 </body>
 </html>
