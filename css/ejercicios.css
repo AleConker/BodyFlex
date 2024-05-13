@@ -63,3 +63,43 @@ footer {
 .info_footer a:hover {
     text-decoration: underline; /* Subrayado al pasar el ratón */
 }
+
+main {
+    padding: 20px;
+}
+
+#productos-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.product-card img {
+    max-width: 100%; /* Establecer el ancho máximo */
+    height: auto; /* Permitir que la altura se ajuste automáticamente para mantener la proporción */
+}
+
+/* Estilos para la paginación */
+#pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

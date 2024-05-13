@@ -1,0 +1,190 @@
+/* Estilos generales para la barra de navegación */
+.home_header {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px 20px; /* Espaciado interno superior e inferior */
+    background-color: #040c1c; /* Color de fondo (ajústalo según tus preferencias) */
+}
+
+/* Estilos para el logotipo */
+.logo_header img {
+    max-width: 30px; /* Ajusta el tamaño del logotipo según tus necesidades */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav_header ul {
+    list-style-type: none; /* Elimina los marcadores de viñetas */
+    margin-left: 20px;
+    padding: 0;
+    display: flex; /* Muestra los elementos en línea */
+    gap: 20px; /* Espaciado entre los elementos */
+}
+
+.nav_header a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #efe9e9; /* Color del texto de los enlaces */
+    font-weight: bold; /* Peso de la fuente (ajústalo según tus preferencias) */
+}
+
+footer {
+    background-color: #d5d5d5; /* Color de fondo */
+    padding: 50px 0; /* Espaciado interno */
+    margin-top: 30px;
+}
+
+.footer_container {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Distribuye los elementos */
+}
+
+.logo_footer img {
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Altura automática */
+}
+
+.info_footer {
+    text-align: center; /* Alineación del texto */
+}
+
+.info_footer p {
+    margin: 10px 20px; /* Espaciado entre párrafos */
+    color: #666; /* Color del texto */
+}
+
+.info_footer a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.info_footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.cuerpo {
+    display: flex;
+    height: 100hv;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(130deg, rgb(76, 182, 231), rgb(198, 76, 235));
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+
+}
+
+.container .title_registro {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.container form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 12px 0;
+}
+
+form .form-group {
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+}
+
+form span {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+}
+
+.form-group input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group input:valid{
+    border-color: skyblue;
+}
+
+form .button-registrar, .button-limpiar {
+    width: 45%;
+    height: 40px;
+    margin: 10px 10px;
+}
+
+form .button-registrar input, .button-limpiar input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(130deg, skyblue, rgb(144, 245, 176));
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+}
+
+form .button-registrar input:hover, .button-limpiar input:hover {
+    background: linear-gradient(130deg, rgb(144, 245, 176), skyblue);
+}
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+
+    form .form-group{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form{
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+
+    .container form::-webkit-scrollbar{
+        width: 0;
+    }
+
+    form .button-limpiar, .button-registrar{
+        margin: 10px 0;
+    }
+}
+
+small {
+    display: none;
+}
+
+.was-validate small{
+    display: block;
+    color: red;
+}
+
+.error-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffcccc;
+    color: #ff0000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}

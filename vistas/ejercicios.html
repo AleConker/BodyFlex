@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador</title>
-    <link rel="stylesheet" href="../css/buscador.css">
+    <title>Ejercicios</title>
+    <link rel="stylesheet" href="../css/ejercicios.css">
+
 </head>
 <body>
     <header class="home_header">
@@ -20,6 +21,17 @@
             </ul>
         </nav>
     </header>
+    <main id="main-content">
+        <!-- Sección para mostrar los productos -->
+        <section id="productos-section"></section>
+        
+        <!-- Paginación -->
+        <div id="pagination">
+            <button id="prev-btn" disabled>Anterior</button>
+            <span id="page-info"></span>
+            <button id="next-btn">Siguiente</button>
+        </div>
+    </main>
     <footer>
         <div class="footer_container">
             <div class="logo_footer">
@@ -32,5 +44,8 @@
             </div>
         </div>
     </footer>
+    <!--JavaScript-->
+    <script src="../js/database.js"></script>
+    <script type="text/javascript" src="../js/ejercicios.js"></script>
 </body>
 </html>
