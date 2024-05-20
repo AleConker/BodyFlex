@@ -67,18 +67,38 @@ footer {
 main {
     display: flex;
     height: 100hv;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(130deg, rgb(76, 182, 231), rgb(198, 76, 235));
+    background: linear-gradient(135deg, #7c3fe6, #21c8ff);
+}
+
+.recuadro {
+    max-width: 1000px;
+    width: 100%;
+    height: 120px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recuadro h1 {
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .contenedor {
+    
     max-width: 1000px;
     width: 100%;
-    padding: 25px 30px;
+    padding: 25px;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 #productos-section {
@@ -90,35 +110,35 @@ main {
 .product-card {
     overflow: hidden;
     border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 15px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-    cursor: default;
-    transition: all 400ms ease;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-align: center;
 }
 
 .product-card:hover {
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3%);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
-    max-width: 100%; /* Establecer el ancho máximo */
-    height: auto; /* Permitir que la altura se ajuste automáticamente para mantener la proporción */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .product-card p {
     line-height: 1.5;
-    color: #3c3c3c;
+    color: #555;
 }
 
 .product-card h2 {
     font-weight: 400;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-/* Estilos para la paginación */
 #pagination {
     margin-top: 20px;
     display: flex;
@@ -130,6 +150,15 @@ main {
     padding: 10px 20px;
     margin: 0 5px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #7c3fe6;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+#pagination button:hover {
+    background-color: #5426a8;
 }
 
 #pagination button:disabled {
