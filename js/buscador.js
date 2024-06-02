@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const productsPerPage = 10;
     let filteredResults = []; // Variable para almacenar los resultados filtrados
 
+    const KEY_LOCAL_STORAGE = "nuevos_ejercicios";
+
+    function obtenerDatos(key) {
+        const dataString = localStorage.getItem(key);
+        return dataString ? JSON.parse(dataString) : [];
+    }
+
+    const nuevosEjercicios = obtenerDatos(KEY_LOCAL_STORAGE);
+
+    const allEntrenamientos = entrenamientos.concat(nuevosEjercicios);
+
     // Función para obtener los resultados filtrados
     function applyFilters() {
         // Obtener valores de los filtros
@@ -18,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const availability = document.getElementById('availability-filter').value;
 
         // Filtrar resultados
-        filteredResults = entrenamientos.filter(product => {
+        filteredResults = allEntrenamientos.filter(product => {
             const meetsPriceCondition = (!minPrice || product.precio >= minPrice) && (!maxPrice || product.precio <= maxPrice);
             const meetsCategoryCondition = !category || product.categoria.toLowerCase() === category.toLowerCase();
             const meetsAvailabilityCondition = !availability || (availability === 'true' && product.disponibilidad) || (availability === 'false' && !product.disponibilidad);

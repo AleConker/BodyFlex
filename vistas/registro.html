@@ -20,81 +20,96 @@
             </ul>
         </nav>
     </header>
-    <article class="cuerpo">
-        <section class="container">
-            <div class="title_registro">Registro de Productos</div>
-            <form id="exercise-form" novalidate>
-                <div class="form-group">
-                    <label for="exercise-name">Nombre del Ejercicio:</label>
-                    <input type="text" id="exercise-name" placeholder="Ingrese el nombre del ejercicio" maxlength="20" required>
-                </div>
-                <div class="form-group">
-                    <label for="exercise-category">Categoría:</label>
-                    <select id="exercise-category" required>
-                        <option value="">Seleccionar Categoría</option>
-                        <option value="Bíceps">Bíceps</option>
-                        <option value="Abdomen">Abdomen</option>
-                        <option value="Lumbar">Lumbar</option>
-                        <option value="Espalda">Espalda</option>
-                        <option value="Hombro">Hombro</option>
-                        <option value="Pectoral">Pectoral</option>
-                        <option value="Soleo">Soleo</option>
-                        <option value="Femoral">Femoral</option>
-                        <option value="Cuadriceps">Cuadriceps</option>
-                        <option value="Antebrazo">Antebrazo</option>
-                        <option value="Tríceps">Tríceps</option>
-                        <option value="Abductores">Abductores</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exercise-image">Imagen:</label>
-                    <select id="exercise-image" required>
-                        <option value="">Seleccionar Imagen</option>
-                        <option value="workout_1">workout_1</option>
-                        <option value="workout_2">workout_2</option>
-                        <option value="workout_3">workout_3</option>
-                        <option value="workout_4">workout_4</option>
-                        <option value="workout_5">workout_5</option>
-                        <option value="workout_6">workout_6</option>
-                        <option value="workout_7">workout_7</option>
-                        <option value="workout_8">workout_8</option>
-                        <option value="workout_9">workout_9</option>
-                        <option value="workout_10">workout_10</option>
-                        <option value="workout_11">workout_11</option>
-                        <option value="workout_12">workout_12</option>
-                        <option value="workout_13">workout_13</option>
-                        <option value="workout_14">workout_14</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exercise-code">Código del Ejercicio:</label>
-                    <input type="text" id="exercise-code" placeholder="Ingrese el código del ejercicio" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d{2}).{8,}" required>
-                </div>
-                <div class="form-group">
-                    <label for="exercise-price">Precio:</label>
-                    <input type="number" id="exercise-price" placeholder="Ingrese el precio" min="0" required>
-                </div>
-                <div class="form-group">
-                    <label for="exercise-description">Descripción:</label>
-                    <textarea id="exercise-description" placeholder="Escriba una descripción del ejercicio" maxlength="160" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="exercise-trainer">Entrenador:</label>
-                    <input type="text" id="exercise-trainer" placeholder="Ingrese el nombre del entrenador" required>
-                </div>
-                <div class="form-group">
-                    <label>Disponibilidad:</label>
-                    <div>
-                        <label><input type="radio" name="availability" value="true" required> Disponible</label>
-                        <label><input type="radio" name="availability" value="false"> No Disponible</label>
+    <article class="home_body">
+        <section class="home_presentacion">
+            <div class="text_banner">
+                <h1>Registro de Ejercicios</h1>
+                <h4>Ingrese los detalles del nuevo ejercicio</h4>
+            </div>
+            
+            <div class="form_container">
+                <form id="exercise-form">
+                    <div class="form-left">
+                        <p>
+                            <label for="nombre_ejercicio">Nombre del Ejercicio:</label>
+                            <input type="text" id="nombre_ejercicio" name="nombre_ejercicio" required>
+                        </p>
+                        <p>
+                            <label for="categoria">Categoría:</label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">Seleccionar Categoría</option>
+                                <option value="Bíceps">Bíceps</option>
+                                <option value="Abdomen">Abdomen</option>
+                                <option value="Lumbar">Lumbar</option>
+                                <option value="Espalda">Espalda</option>
+                                <option value="Hombro">Hombro</option>
+                                <option value="Pectoral">Pectoral</option>
+                                <option value="Soleo">Soleo</option>
+                                <option value="Femoral">Femoral</option>
+                                <option value="Cuadriceps">Cuadriceps</option>
+                                <option value="Antebrazo">Antebrazo</option>
+                                <option value="Tríceps">Tríceps</option>
+                                <option value="Abductores">Abductores</option>
+                                <option value="Gluteos">Gluteos</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="imagen">Imagen:</label>
+                            <select id="imagen" name="imagen" required>
+                                <option value="">Seleccionar Imagen</option>
+                                <option value="workout_1">workout_1</option>
+                                <option value="workout_2">workout_2</option>
+                                <option value="workout_3">workout_3</option>
+                                <option value="workout_4">workout_4</option>
+                                <option value="workout_5">workout_5</option>
+                                <option value="workout_6">workout_6</option>
+                                <option value="workout_7">workout_7</option>
+                                <option value="workout_8">workout_8</option>
+                                <option value="workout_9">workout_9</option>
+                                <option value="workout_10">workout_10</option>
+                                <option value="workout_11">workout_11</option>
+                                <option value="workout_12">workout_12</option>
+                                <option value="workout_13">workout_13</option>
+                                <option value="workout_14">workout_14</option>
+                            </select>
+                        </p>
+                        <div class="preview_img">
+                            <img id="image-preview" src="" alt="Imagen seleccionada" style="display: none;">
+                        </div>
+                        <p>
+                            <label for="precio">Precio:</label>
+                            <input type="number" id="precio" name="precio" required min="0">
+                        </p>
+                        <p>
+                            <label for="codigo">Código del Ejercicio:</label>
+                            <input type="text" id="codigo" name="codigo" required>
+                        </p>
+                        <p>
+                            <label for="entrenador">Nombre del Entrenador:</label>
+                            <input type="text" id="entrenador" name="entrenador" required>
+                        </p>
+                        <p>
+                            <label>Disponibilidad:</label>
+                            <input type="radio" id="disponible" name="disponibilidad" value="true" required>
+                            <label for="disponible">Disponible</label>
+                            <input type="radio" id="no_disponible" name="disponibilidad" value="false">
+                            <label for="no_disponible">No Disponible</label>
+                        </p>
+                        <p>
+                            <label for="descripcion">Descripción:</label>
+                            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+                        </p>
                     </div>
-                </div>
-                <div class="button-group">
-                    <button type="submit">Registrar</button>
-                    <button type="button" id="clear-btn">Limpiar Campos</button>
-                </div>
-            </form>
-        </section>
+                    <div class="form-right">
+                        
+                        <div class="form_buttons">
+                            <button type="submit" id="submit-btn">Enviar</button>
+                            <button type="reset" id="clear-btn">Limpiar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>    
     </article>
 
 

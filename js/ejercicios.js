@@ -4,18 +4,33 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.getElementById('next-btn');
     const pageInfo = document.getElementById('page-info');
     
+    const KEY_LOCAL_STORAGE = "nuevos_ejercicios";
     const productsPerPage = 15;
     let currentPage = 1;
-    let totalPages = Math.ceil(entrenamientos.length / productsPerPage);
+
+    // Función para obtener datos desde el Local Storage
+    function obtenerDatos(key) {
+        const dataString = localStorage.getItem(key);
+        return dataString ? JSON.parse(dataString) : [];
+    }
+
+    // Obtener ejercicios desde Local Storage
+    const nuevosEjercicios = obtenerDatos(KEY_LOCAL_STORAGE);
+
+
+    // Combinar ejercicios existentes con los nuevos
+    const allEntrenamientos = entrenamientos.concat(nuevosEjercicios);
+
+    let totalPages = Math.ceil(allEntrenamientos.length / productsPerPage);
 
     function renderProducts() {
         productosSection.innerHTML = ''; // Limpiar la sección de productos
         
         const startIndex = (currentPage - 1) * productsPerPage;
-        const endIndex = Math.min(startIndex + productsPerPage, entrenamientos.length);
+        const endIndex = Math.min(startIndex + productsPerPage, allEntrenamientos.length);
 
         for (let i = startIndex; i < endIndex; i++) {
-            const product = entrenamientos[i];
+            const product = allEntrenamientos[i];
             const productCard = createProductCard(product);
             productosSection.appendChild(productCard);
         }
@@ -61,3 +76,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Renderizar los productos iniciales
     renderProducts();
 });
+
