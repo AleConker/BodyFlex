@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="../css/registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="home_header">
@@ -24,10 +27,11 @@
         <section class="home_presentacion">
             <div class="text_banner">
                 <h1>Registro de Ejercicios</h1>
-                <h4>Ingrese los detalles del nuevo ejercicio</h4>
+                <h4>En esta ventana podras registrar un ejercicio nuevo que no encuentres en nuestro gimnasio, pero es importante que diligencies correctamente todos los datos, si no sabes como rellenar los datos, el sistema al dectectar un error en los datos ingresados le dara la opcion de ir a una pagina donde se le explicara detalladamente como llenar todos los campos del formulario. Despues de ingresar correctamente los datos podra visualizarlos en nuestra pagina de ejercicios y podra buscarlos en nuestra pagina de busqueda de ejercicios</h4>
             </div>
             
             <div class="form_container">
+                
                 <form id="exercise-form">
                     <div class="form-left">
                         <p>
@@ -73,9 +77,6 @@
                                 <option value="workout_14">workout_14</option>
                             </select>
                         </p>
-                        <div class="preview_img">
-                            <img id="image-preview" src="" alt="Imagen seleccionada" style="display: none;">
-                        </div>
                         <p>
                             <label for="precio">Precio:</label>
                             <input type="number" id="precio" name="precio" required min="0">
@@ -101,7 +102,9 @@
                         </p>
                     </div>
                     <div class="form-right">
-                        
+                        <div class="preview_img">
+                            <img id="image-preview" src="" alt="Imagen seleccionada" style="display: none;">
+                        </div>
                         <div class="form_buttons">
                             <button type="submit" id="submit-btn">Enviar</button>
                             <button type="reset" id="clear-btn">Limpiar</button>

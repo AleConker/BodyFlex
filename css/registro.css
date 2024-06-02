@@ -1,3 +1,9 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
 /* Estilos generales para la barra de navegación */
 .home_header {
     display: flex;
@@ -176,7 +182,6 @@ button:hover {
 
 #exercise-form {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -196,26 +201,33 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .preview_img {
     margin-bottom: 20px;
     width: 100%;
+    max-width: 300px; 
+    margin-left: 50px; 
     text-align: center;
 }
 
 .preview_img img {
     max-width: 100%;
+    height: auto;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
 .form_buttons {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 #submit-btn, #clear-btn {
+    width: 150px;
     background-color: #221974;
     color: white;
     padding: 10px 20px;

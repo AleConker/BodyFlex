@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (errorMessage) {
             const userChoice = confirm(`${errorMessage}\n¿Desea ver las instrucciones de cómo llenar el formulario?`);
             if (userChoice) {
-                window.location.href = 'instrucciones.html';
+                window.location.href = 'indicaciones.html';
             }
         } else {
             const nuevoEjercicio = {
